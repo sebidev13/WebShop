@@ -1,0 +1,6 @@
+@WebShopServiceWebsline_HostAddress = http://localhost:5190
+
+GET {{WebShopServiceWebsline_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
