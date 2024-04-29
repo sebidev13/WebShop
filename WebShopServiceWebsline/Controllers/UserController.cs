@@ -116,10 +116,10 @@ namespace WebShopServiceWebsline.Controllers;
         }
         
         [HttpDelete("{userId}")]
-        [ProducesResponseType(200)] //OK
-        [ProducesResponseType(204)] //No Content
-        [ProducesResponseType(400)] //Bad Request
-        [ProducesResponseType(404)] //Not Found
+        [ProducesResponseType(200)] 
+        [ProducesResponseType(204)] 
+        [ProducesResponseType(400)] 
+        [ProducesResponseType(404)] 
         public IActionResult DeleteUser([FromQuery] int userId, [FromBody] UserDTO deleteUser)
         {
             if (deleteUser == null)

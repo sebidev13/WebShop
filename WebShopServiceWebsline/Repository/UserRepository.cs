@@ -35,13 +35,13 @@ public class UserRepository : IUserRepository
 
     public bool CreateUser(User user)
     {
+        user.UserId = _context.Users.Count() + 1;
         _context.Users.Add(user);
 
         if (_context.Users.Contains(user))
             return true;
 
         return false;
-
     }
 
     public bool UpdateUser(User user)
