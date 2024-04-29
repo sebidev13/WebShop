@@ -85,7 +85,7 @@ namespace WebShopServiceWebsline.Controllers;
             return Ok("User Successfully created");
         }
         
-        [HttpPut("{userId}")]
+        [HttpPut()] //"{userId}")]
         [ProducesResponseType(200)]
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
@@ -96,7 +96,7 @@ namespace WebShopServiceWebsline.Controllers;
                 return BadRequest(ModelState);
 
             if(userId != updateUser.UserId)
-                return BadRequest();    
+                return BadRequest("The updated User must have the same id as the original user");    
 
             if(_userRepository.UserExists(userId) == false)
                 return NotFound();
@@ -115,7 +115,7 @@ namespace WebShopServiceWebsline.Controllers;
             return Ok(); 
         }
         
-        [HttpDelete("{userId}")]
+        [HttpDelete()]  //"{userId}")]
         [ProducesResponseType(200)] 
         [ProducesResponseType(204)] 
         [ProducesResponseType(400)] 
